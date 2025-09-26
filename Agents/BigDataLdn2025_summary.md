@@ -294,12 +294,12 @@ They have created a platform called Maia which looks to augment the data enginee
 
 They have context files which they use to create pipelines from natural language. In these context files, They describe heavily the business landscape,
 the data landscape, security standards and how to generate each section of the pipeline: pipeline context, data sources, business rules that are associated with that pipeline.
-They translate business language into data pipeline language in that manner. <-AGENT AUGMENTATION TASK
+They translate business language into data pipeline language in that manner. This could be interesting to look into in regards to generating complex pipelines via natural language <-AGENT AUGMENTATION TASK
 
 ### Prefect - Preface
 
 Prefect is a workflow orchestration framework built for building python pipelines. By adding wrappers to code, information is exposed on the dashboard.
-They also have some open source infrastructure generation that could be interesting to look into: <-AGENT AUGMENTATION TASK
+They also have some open source infrastructure generation that could be interesting to look into for our team to replace infrastructure generation?: <-AGENT AUGMENTATION TASK
 
 ### To read
 
