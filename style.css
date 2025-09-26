@@ -40,9 +40,10 @@ body {
 
 .post-layout {
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  padding-top: 1rem;
+  /*flex-direction: row;*/
+  flex-wrap: wrap; /* allow wrapping on small scree ns */
+  gap: 1rem; /* optional spacing */
+  /*padding-top: 1rem;*/
 }
 
 .sidebar {
@@ -237,7 +238,7 @@ body.post-mode .main-content {
 
 .markdown-body.post-content {
   flex: 1 1 auto;
-  max-width: 720px;
+  max-width: 100%;
   padding: 1rem 0;
   margin: 0;
   color: var(--text-color) !important;

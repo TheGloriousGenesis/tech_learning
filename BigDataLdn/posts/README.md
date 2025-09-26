@@ -6,9 +6,22 @@ tags: AI, platform, tools
 
 ## Business Value in AI
 Multiple steps can be taken to ensure sustained sponsorship: [Microsofts AI strategy roadmap](https://info.microsoft.com/ww-landing-AI-Strategy-Roadmap-Navigating-the-stages-of-AI-value-creation.html)
-- find the strategic initiative of the company (company wild OKRS) and align with them. 
-- Find what the business strategy is for the firm (buying, vertical integration) ==List different types of business strategy one can take for company==  
-
+- Find the strategic initiative of the company (company wild OKRs) and align with them. 
+- Find what the business strategy is for the firm, acquisition Strategies 
+  - Horizontal acquisition - buying competitors: 
+    - Sales growth: Buy companies for their client/customer bases
+    - Regional expansions: Enter new markets by acquiring local businesses in same sector with existing infrastructure (e.g offices).
+    - Industry roll-up: Consolidate fragmented markets by buying smaller competitors to dominate market share.
+    - Diversification: Reduce risk by buying companies in unrelated sectors (e.g tech company buying logistics company)
+    - Full Service Expansion: Broaden offerings by acquiring complementary services (e.g hairdresser purchasing beauty salon).
+  - Vertical acquisition - buying suppliers/distributors
+    - Backward integration acquiring suppliers
+    - Forward integration controlling distribution (e.g brewery owning pubs)
+    - Balanced integration managing both production and distribution internally
+  - Innovation & Product Development
+    - Cutting edge R&D
+    - New product launches
+    - 
 ## Platforms
 Platform tools, a one stop shop for creation, deployment, runtime (monitoring operations) are becoming more mainstream as people want a centralised place to maintain the full life cycle of a product as platforms, at their core, must enable data centralisation, and data centralisation is what people want. They dont want to use multiple tools. They want centralised asset management.
 
