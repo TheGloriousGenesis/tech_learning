@@ -1,5 +1,3 @@
-#Big Data LDN My Notes
-
 ## How Databricks does Analytics and a whole lot more? Chatbot to query
 high level datasets
 
@@ -11,13 +9,13 @@ Before you would need to prompt a llm which will then reply. Now the reply goes 
 
 Context is king!
 
-Use markdown files to describe what you want to achieve. Very long
-context and describe all steps
+Tip - Use markdown files to describe what you want to achieve. Very long
+context and describe all steps is better than docstrings and writing in code! both should be done haha.
 
 Tip - Focus on error messages! Be descriptive and recovery messages on what to
 do next in error messages
 
-Self healing loops (do iterations on format and quality then execute)
+Tip - Self healing loops (do iteration checks on format and quality of what is produced (have a critic) then execute or return results to user)
 
 Blueprints are the new code!
 
@@ -54,46 +52,40 @@ Commit documentation
 
 ## Agentic AI Architecture - how to use LLMs at enterprise scale
 
-Fablio : text based role playing fantasy game
+Genai platform architecture: You have tracking and monitoring, inference, tuning, CICD. 
+Tracking and monitoring: includes logs and metrics that feeds into a monitoring dashboard period.
+Inference: includes an application that has a store of prompt templates, which term is a combination of prompt construction augmentation model scoring and some post processing results are then returned to the application.
+Tuning: includes source data being provided to the system to curate context (this can be provided in documents or even better as RAG) which is then stored in the vector store which helps augment prompts with additional information. alongside this, the underlining model undergoes fine tuning which is based on a foundational model being tailored to this given business usecase
 
-Genai platform architecture
+Agent AI architecture / Multi-agent Patterns:
+1. Refinement/reflection agent
+2. Prompt chaining of tasks (finance analyst agent: data -> trend analysis)
+3. Routing (this requests need specialised agent e.g customer support requests should be handled by retail chatbot )
+4. Parallelisation
+5. Orchestror/Planner (big agent that summarises all info from other agent)
 
-Hidden technical debt in machine learning systems
 
-GENAI platform: RAG App. Prompt templates. Prompt construction. Prompt
-Argumentation. scoring. Post processing app
+An Agent consist of:
+- brains (LLM) 
+- memory (Context - history of prompts/answers) 
+- tools (for actions)
 
-Genai platform: RAG Wrap prompt with RAG
+To create a good agent/prompt you must tell the agent/prompt what it is! Describe it's Role, Goal, Behaviour, Purpose
 
-Metrics are important
+Create Agent personas: Tuned and trained to have a certain role
 
-Agent personas:
+Best practices with agents:
+- Define clear contracts
+- enable agent discovery
+- apply versioning, 
+- evolution communication of new versions 
+- implement monitoring (obtain metrics, this is important!)
+- allow polyglot language / systems
 
-Tuned and trained to have a certain role
-
-Agent consist of: - brains (LLM) - memory (Context - history of
-prompts/answers) - tools (for actions)
-
-Tell the agent what it is!
-
-Role Goal Behaviour Purpose
-
-Agent AI architecture patterns Have agents be critics etc Refinement:
-critic Prompt chaining: output of one goes into the next so splitting
-prompt to multi agent important Routing: Parallelisation: Orchestrator:
-supervisor agent, gather results together summarise and give back to
-user
-
-Autonomous, modular, loosely coupled, scalable, distributed -
-microservices, object orientated, service oriented architecture
-
-Cost - inter agent communicate - deployment - cost
-
-Best practices - clear contracts - enable agent discovery - apply
-versioning, evolution communication of new versions - monitoring - allow
-polyglot language / systems
-
+Agents are autonomous, modular, loosely coupled, scalable, distributed -
+similar to common patterns we have now: microservices, object orientated, service oriented architecture
 Agents are the new microservices
+
 
 ## Can MCP be more than just the latest way to codify our stubbornly opinionated data egos?
 
@@ -114,6 +106,7 @@ Ship core functionality first. Polish later
 Time, revenue and risk (translate tech to business wins)
 
 Regular check ups in finance legal security
+
 
 ## FastMCP: Model Context Pragmatism Prefect built FastMCP
 
@@ -190,36 +183,33 @@ currently many mcp servers are used as static tool servers because being dynamic
 48 browser tab problem). This hides complexity from llm and maintains consistency across systems
 7. MCP Pattern - Investifate assistant: Gather and reconcile fragmented data. Returns synthesized context not raw data. This handles correlation complexity!
 
-### Extras
-Prefect is open source and could offload infrastructure work
+
 
 ## Knowledge Graphs as a Reasoning Engine: Deploying Agents To Uncover Deep Insights in Your Connected Data 
 
-Reasoning is the cognitive process of  deriving knowledge from evidence
+Reasoning is the cognitive process of deriving knowledge from evidence
 
-LLM limited to data they have been trained on
+LLM limited to data they have been trained on, RAG offers solution and retrieves info
 
-RAG offers solution and retrieves info
+With the new graph reasoning agent what occurs is the orchestrator, which is a language model, has access to a state graph. 
+The language model also has access to tools via MCP in which it can call in order to execute certain functionality.
 
-Agents helpful to match them together
-
-LLM that can do reason on graphs
-
-GDS Agent: A graph Algorithmic Reasoning agent
-
-- description of algo, match it up, run on database, results get
 
 ## Small Language Models Beginners course
 
-Small language model : at or below 12 billion parameters
+Small language model (SLM): at or below 12 billion parameters
+Large language model (LLM): above 12 billion
+NOTE: Above is rough estimations that can be modified depending on business need
 
-SLM: specialist LLM: generalist
+
+SLM: use for specialist models
+LLM: use for generalist models, complex reasoning
 
 Pros SLM:
 
 - Cost, power (paper - large language models: significant cost)
 
----Developing agents:
+### Developing agents:
 
 Read Open AI has a practical guide to building agents
 
@@ -229,49 +219,63 @@ Choose best model that does that
 
 Read Nvidia small langue models are the future of agent ai
 
-Keep large for orchestrator, small for agents (keep large for reasoning)
+Keep LLM for orchestrator/reasoning of complex task, SLM for specialise agents/ small tasks
 
---- quantization Chose quantization level to save money too. That choose
-level of detail the weights are saved as. Sometimes less money, faster
-and better performance (good for inference endpoints)
+
+
+#### Quantization 
+Chose quantization level to save money too. 
+Quantization describes level of detail the weights of the LM are saved as. 
+Better Quantization can sometimes cost less money, be faster and have better performance (good for inference endpoints)
 
 E.g Q4 quantization (8 times smaller, good for edge devices, local)
 
-Tip: don't go below q4
+Tip: don't go below q4 in many cases
 
---- distillation Have teacher model train student model. Can save money
+#### Distillation 
 
---- Choose your deployment pattern
+Description : Have teacher model train student model. Can save money
 
-What is edge compute?
+### Choose your deployment pattern
 
---- Local deployment Oollama needs to be manually configured in windows
+#### Local deployment 
+
+Utilise redits, local llama LLM community
+
+ensure you have good hardware as well
+
+To utilise quantised models ollama and LM studio is helpful to read the llama.Cpp files
+
+Oollama needs to be manually configured in windows machines to use the correct GPU
 
 In oollama you have to create custom model file to obtain model of
 quantize level you want
-
---- usage
 
 After you create model, you can select and copilot
 
 Can use continue.dev too
 
---- Managed cloud platform
+Ollama and LM studio provide great engines to run small language models on local hardware.
+This route provides maximum privacy and works off-line but requires investment in equipment and maintenance
+
+#### Managed cloud platform
 
 - data stays in tenant
 - use AWS sagemaker and jumpstart
 
-- use huggingface cli to download model in uc volume, use python wrapper
+- Using databricks example utilisation : use huggingface cli to download model in uc volume, then use python wrapper
 (using transformers), declare unity catalog and deploy (serverless
-endpoint)
+endpoint) 
 
---- cloud api access
+- leverage the cloud to access a wide way of models securely keeping data within your company tenant. this requires setting up deployment pipelines and supporting any custom points made
 
-- Pay by token
+#### Cloud api access
 
-- could deprecate old api endpoints, be careful!
+Pay by token
 
-- using huggingface interface API playground
+could deprecate old api endpoints, be careful!
+
+using huggingface interface API playground
 
 As context increases, token increases, money increases
 
@@ -281,14 +285,25 @@ Always look at the license
 
 Use the instruct version of the model if available
 
-## Let's talk about Context - Why AI Agents are not that smart! 
 
-Context is everywhere and can provide agent with a data that allows personalised
-experiences
+## Stands/Extras
 
-Smart guardrails - time base and behavioural triggers that restricts AI
-GOING OFF
+### Matillion - Maia
 
- For operational reliability
+They have created a platform called Maia which looks to augment the data engineer role (and even slightly the data scientist role) regarding generating pipelines.
 
+They have context files which they use to create pipelines from natural language. In these context files, They describe heavily the business landscape,
+the data landscape, security standards and how to generate each section of the pipeline: pipeline context, data sources, business rules that are associated with that pipeline.
+They translate business language into data pipeline language in that manner. <-AGENT AUGMENTATION TASK
 
+### Prefect - Preface
+
+Prefect is a workflow orchestration framework built for building python pipelines. By adding wrappers to code, information is exposed on the dashboard.
+They also have some open source infrastructure generation that could be interesting to look into: <-AGENT AUGMENTATION TASK
+
+### To read
+
+- Hidden technical debt in machine learning systems (similar issues to what we see in agents today too)
+- GDS Agent: A graph Algorithmic Reasoning agent (first LLM that can do reason on graphs: e.g user will ask NL question and the agent understands the implicit graph base nature of the question, selects correct graph algorithm, executes it on the knowledge graph, obtains accurate grounded answer)
+- OpenAI agent development practical guide (With agent development: establish a baseline to measure perfomance, iterate on accuracy, optimise for efficency)
+- Nvidia Language models are the future of agentic AI (use small language models to reduce latency and infrastructure cost, implement modular design where small language models are used for routine tasks and reserve large models for complex reasoning, rapid specialisation find tune agile small language models for specific tasks to enable faster iteration)
