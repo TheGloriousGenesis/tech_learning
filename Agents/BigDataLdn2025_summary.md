@@ -1,8 +1,3 @@
-## How Databricks does Analytics and a whole lot more? Chatbot to query
-high level datasets
-
-Jupyter notebook instance connected to data
-
 ## Tips and tricks for how to get better results from LLM+MCP conversations
 
 Before you would need to prompt a llm which will then reply. Now the reply goes through an agent before it is returned to user
@@ -285,8 +280,14 @@ Always look at the license
 
 Use the instruct version of the model if available
 
+## Must read articles and guides
 
-## Stands/Extras
+- Book: Hidden technical debt in machine learning systems (similar issues to what we see in agents today too)
+- GDS Agent: A graph Algorithmic Reasoning agent (first LLM that can do reason on graphs: e.g user will ask NL question and the agent understands the implicit graph base nature of the question, selects correct graph algorithm, executes it on the knowledge graph, obtains accurate grounded answer)
+- OpenAI agent development practical guide (With agent development: establish a baseline to measure perfomance, iterate on accuracy, optimise for efficency)
+- Nvidia Language models are the future of agentic AI (use small language models to reduce latency and infrastructure cost, implement modular design where small language models are used for routine tasks and reserve large models for complex reasoning, rapid specialisation find tune agile small language models for specific tasks to enable faster iteration)
+
+## Companies of high interest
 
 ### Matillion - Maia
 
@@ -294,16 +295,17 @@ They have created a platform called Maia which looks to augment the data enginee
 
 They have context files which they use to create pipelines from natural language. In these context files, They describe heavily the business landscape,
 the data landscape, security standards and how to generate each section of the pipeline: pipeline context, data sources, business rules that are associated with that pipeline.
-They translate business language into data pipeline language in that manner. This could be interesting to look into in regards to generating complex pipelines via natural language <-AGENT AUGMENTATION TASK
+They translate business language into data pipeline language in that manner. 
+
+AGENT AUGMENTATION TASK: Look into Maia's context files they use to generate complex pipelines using natural language and give a brief description. State pros and cons and current usecases.
 
 ### Prefect - Preface
 
 Prefect is a workflow orchestration framework built for building python pipelines. By adding wrappers to code, information is exposed on the dashboard.
-They also have some open source infrastructure generation that could be interesting to look into for our team to replace infrastructure generation?: <-AGENT AUGMENTATION TASK
 
-### To read
+They also have some open source infrastructure generation 
 
-- Hidden technical debt in machine learning systems (similar issues to what we see in agents today too)
-- GDS Agent: A graph Algorithmic Reasoning agent (first LLM that can do reason on graphs: e.g user will ask NL question and the agent understands the implicit graph base nature of the question, selects correct graph algorithm, executes it on the knowledge graph, obtains accurate grounded answer)
-- OpenAI agent development practical guide (With agent development: establish a baseline to measure perfomance, iterate on accuracy, optimise for efficency)
-- Nvidia Language models are the future of agentic AI (use small language models to reduce latency and infrastructure cost, implement modular design where small language models are used for routine tasks and reserve large models for complex reasoning, rapid specialisation find tune agile small language models for specific tasks to enable faster iteration)
+Repository: https://github.com/PrefectHQ/Prefect
+
+AGENT AUGMENTATION TASK: Look into Prefect and describe their infrastructure generation capabilities, the pros and cons and current usecases
+
